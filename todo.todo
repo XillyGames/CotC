@@ -1,0 +1,34 @@
+Main things to do:
+
+✔ Set up the menus so that they actually can be used with mouse interaction @done(2016-06-20 18:02)
+✔ Implement loot @done(2016-06-22 18:27)
+✔ Implement inventory @done(2016-06-22 18:27)
+✔ Implement level up system @done(2016-06-22 18:27)
+
+☐ Possibly implement some form of HUD
+
+☐ Create a screen boundary, so that we can not go on infinitely in a direction
+☐ Implement other Characters
+  ✔ Clef @done(2016-06-21 17:58)
+  ☐ Egnito
+  ☐ Cirro
+✔ Implement Clef passive @done(2016-06-21 17:58)
+☐ Implement their Abilities
+  ✔ Clef @done(2016-06-21 17:59)
+  ☐ Egnito
+  ☐ Cirro
+  ✔ Give the option to play other characters in the menu screen @done(2016-06-20 18:03)
+☐ Set up a database of users
+☐ Implement all other enemies
+☐ Add skill trees
+☐ Add options for frame rate
+☐ Add the status effects to each character (and enemy)
+☐ Track the time it takes for each run
+☐ Send this information to the database
+☐ Display the leaderboards from an option in the main menu
+☐ Consider adding basic mode back in (infinite health boss and rapidly spawning level upgrades and items)
+
+
+
+☐ Add a hover to the loot
+✔ Add a right-click option to the loot so that you can reject it and carry on the run @done(2016-06-23 17:26)

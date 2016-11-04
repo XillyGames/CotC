@@ -1,0 +1,68 @@
+User gets 1 point when levelling up to certain levels, at Level 50, they will have all 30 of their maximum points
+Level ends at Level 100 - when the user will unlock *something*
+Characters can be unlocked at different levels
+-
+4 areas are: Ability, AutoAttack, Utility and Health & Resources
+Ability - Cooldown Reduction, Resource Cost, Damage,
+AutoAttacks - Range, Damage, Rate, Speed
+Utility - Persuasion (invisible in Sandbox), Movement Speed, Status Modifier increase, AoE range
+Health & Resources - Health Regen, Resource Regen, MaxHealth, MaxResource
+
+136 Skill options per branch
+544 unique Skill options total
+
+Points To Input
+If you input Point n in slot y, this opens up Slot n and Slot (n + 1) in slot y + 1
+
+SkillTree = {}
+  SkillTree.AbilityBranch = {},
+    AbilityBranch.Branch1 = ""
+    AbilityBranch.Branch2 = ""
+    AbilityBranch.Branch3 = ""
+    AbilityBranch.Branch4 = ""
+    ...
+  SkillTree.AutosBranch = {},
+  SkillTree.UtilityBranch = {},
+  SkillTree.HealthAndResourcesBranch = {}
+
+Check if SkillTree.Branch.Branch1 ~= "", if so then grab that value, and check if the next branch has a value, until SkillTree.Branch.BranchN = 16, if this has a value, no more checks
+if SkillTree.Branch.BranchN has a value but SkillTree.Branch.BranchN+1 does not, then display n and n+1 where n = SkillTree.Branch.BranchN
+
+*IMPORTANT NOTE*: Saving these values in an array would save on back-end storage since we would not have to create a row for each of the Branches in the database table
+
+[16 Point system means 16 possible different endings]
+    A U T O - A T T A C K S                A B I L I T I E S                     U T I L I T Y              H E A L T H & R E S O U R C E S
+0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1     0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1     0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1     0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1
+1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6     1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6     1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6     1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6
+
+                              1                                   1                                   1                                   1
+                            1                                   1                                   1                                   1
+                          1   2                               1   2                               1   2                               1   2
+                        1   2                               1   2                               1   2                               1   2
+                      1   2   3                           1   2   3                           1   2   3                           1   2   3
+                    1   2   3                           1   2   3                           1   2   3                           1   2   3
+                  1   2   3   4                       1   2   3   4                       1   2   3   4                       1   2   3   4
+                1   2   3   4                       1   2   3   4                       1   2   3   4                       1   2   3   4
+              1   2   3   4   5                   1   2   3   4   5                   1   2   3   4   5                   1   2   3   4   5
+            1   2   3   4   5                   1   2   3   4   5                   1   2   3   4   5                   1   2   3   4   5
+          1   2   3   4   5   6               1   2   3   4   5   6               1   2   3   4   5   6               1   2   3   4   5   6
+        1   2   3   4   5   6               1   2   3   4   5   6               1   2   3   4   5   6               1   2   3   4   5   6
+      1   2   3   4   5   6   7           1   2   3   4   5   6   7           1   2   3   4   5   6   7           1   2   3   4   5   6   7
+    1   2   3   4   5   6   7           1   2   3   4   5   6   7           1   2   3   4   5   6   7           1   2   3   4   5   6   7
+  1   2   3   4   5   6   7   8       1   2   3   4   5   6   7   8       1   2   3   4   5   6   7   8       1   2   3   4   5   6   7   8
+1   2   3   4   5   6   7   8       1   2   3   4   5   6   7   8       1   2   3   4   5   6   7   8       1   2   3   4   5   6   7   8
+  2   3   4   5   6   7   8   9       2   3   4   5   6   7   8   9       2   3   4   5   6   7   8   9       2   3   4   5   6   7   8   9
+    3   4   5   6   7   8   9           3   4   5   6   7   8   9           3   4   5   6   7   8   9           3   4   5   6   7   8   9
+      4   5   6   7   8   9   0           4   5   6   7   8   9   0           4   5   6   7   8   9   0           4   5   6   7   8   9   0
+        5   6   7   8   9   0               5   6   7   8   9   0               5   6   7   8   9   0               5   6   7   8   9   0
+          6   7   8   9   0   1               6   7   8   9   0   1               6   7   8   9   0   1               6   7   8   9   0   1
+            7   8   9   0   1                   7   8   9   0   1                   7   8   9   0   1                   7   8   9   0   1
+              8   9   0   1   2                   8   9   0   1   2                   8   9   0   1   2                   8   9   0   1   2
+                9   0   1   2                       9   0   1   2                       9   0   1   2                       9   0   1   2
+                  0   1   2   3                       0   1   2   3                       0   1   2   3                       0   1   2   3
+                    1   2   3                           1   2   3                           1   2   3                           1   2   3
+                      2   3   4                           2   3   4                           2   3   4                           2   3   4
+                        3   4                               3   4                               3   4                               3   4
+                          4   5                               4   5                               4   5                               4   5
+                            5                                   5                                   5                                   5
+                              6                                   6                                   6                                   6
